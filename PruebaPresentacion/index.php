@@ -18,7 +18,7 @@ if(isset($Update->message->text)){
     $ChatMensaje = $Update->message->text;
 
 
-    $telegram->sendMessage($ChatId,"Lo que escribió el usuario es: ".$ChatMensaje);
+    $Telegram->sendMessage($ChatId,"Lo que escribió el usuario es: ".$ChatMensaje);
     
 }
 
