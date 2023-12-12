@@ -3,7 +3,7 @@
     $botToken ="6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes";
 
     /* TODO:URL del Webhook */
-    $webhookurl="https://andercode.net/index.php";
+    $webhookurl="https://zaratesystemgroup.com.ar/CatCor/PruebaPresentacion/index.php";
 
     /* TODO:configura el webhook mediante una solicitud http */
     $apiurl = "https://api.telegram.org/bot$botToken/setWebhook?url=$webhookurl";
