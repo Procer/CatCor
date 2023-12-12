@@ -1,6 +1,6 @@
 <?php
     /* TODO:Token de acceso a tu BOT */
-    $botToken ="6405599137:AAGQxZw0PX-P7uuyttU6goKHjYuNBTJ4Gxw";
+    $botToken ="6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes";
 
     /* TODO:URL del Webhook */
     $webhookurl="https://andercode.net/index.php";
