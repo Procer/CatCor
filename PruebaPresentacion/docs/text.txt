@@ -1,11 +1,15 @@
-https://core.telegram.org
+https://core.telegram.org/
 
 Use this token to access the HTTP API:
-6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes
+6405599137:AAGQxZw0PX-P7uuyttU6goKHjYuNBTJ4Gxw
 
-
-COMANDOS GIT
-
+Comandos GIT:
 1. git add .
-2. git commit -m "poner fecha y nombre de la subida"
+2. git commit -m "<Nombre del Commit>"
 3. git push
+
+composer require telegram-bot/api
+
+BD: u831978754_ejemplobot
+Usuario: u831978754_andercode
+Password: Andercode1

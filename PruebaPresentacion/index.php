@@ -1,12 +1,14 @@
 <?php
-
-
 require_once 'include/vendor/autoload.php';
 
-use TelegramBot\Api\BotApi;
+require_once("config/conexion.php");
+require_once("models/Persona.php");
 
-//Configurar el token de acceso al Bot
-$Telegram = new BotAp('6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes');
+use TelegramBot\Api\BotApi;
+use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
+
+/* TODO:Configurar el token de acceso al tu BOT */
+$telegram = new BotApi('6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes');
 
 /* TODO: Obtiene la actualizacion del webwook */
 $update = json_decode(file_get_contents('php://input'));
