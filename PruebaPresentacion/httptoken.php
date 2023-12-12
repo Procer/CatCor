@@ -1,6 +1,6 @@
 <?php
     /* TODO:Token de acceso a tu BOT */
-    $botToken ="6918082719:AAGOKaGsZVg1-YK7KPhICKj-kbiK4NLGtes";
+    $botToken ="6786073162:AAEovAy6OFzXJX_ojkSAhyvGaSkm__5omnw";
 
     /* TODO:URL del Webhook */
     $webhookurl="https://zaratesystemgroup.com.ar/CatCor/PruebaPresentacion/index.php";
