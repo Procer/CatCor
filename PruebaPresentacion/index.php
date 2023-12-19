@@ -1,5 +1,5 @@
 <?php
-require_once 'include/vendor/autoload.php';
+require_once("include/vendor/autoload.php");
 
 require_once("config/conexion.php");
 require_once("models/Persona.php");
@@ -8,7 +8,7 @@ use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
 
 /* TODO:Configurar el token de acceso al tu BOT */
-$telegram = new BotApi('6786073162:AAEovAy6OFzXJX_ojkSAhyvGaSkm__5omnw');
+$telegram = new BotApi('6569289791:AAHePzznMRgn560YuXHtR5B_a4IkxyQYGJ4');
 
 /* TODO: Obtiene la actualizacion del webwook */
 $update = json_decode(file_get_contents('php://input'));

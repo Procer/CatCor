@@ -1,0 +1,18 @@
+Video Explicativo
+  video de las principales funciones del vehículo (llave, pantalla, comandos en el volante, sensores, etc)
+  video especial sobre la pantalla multimedia (cómo usarla, cómo conectar al celular, mejores prácticas, etc)
+Chatbot
+   chat de telegram con opciones de menú
+   	A - Nosotros
+	B - Contacto
+	C - Videos
+	D - TIPS
+	  1. Pantalla multimedia
+	  2. Manejo
+	  3. Mantenimiento vehículo
+	  4. Computadora a bordo
+	E - Errores
+	F - Iniciar sesión
+	  1. Datos del vehículo
+	  2. Datos del conductor
+	  3. Vencimientos: VTV, cambio cubiertas, service, correa y distribucion, registro, etc.
