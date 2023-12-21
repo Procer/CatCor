@@ -41,10 +41,7 @@ if(isset($update->message->text)){
 
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Unete al Canal de Youtube Andercode",null,$keyboard);
-
-        $informacion="Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-        $telegram->sendMessage($chatId,$informacion);
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",null,$keyboard);
 
         /*$menuMessage = "Aquí está el menú de opciones, elegir la opcion que necesite:\n\n";
         $menuMessage .= "1️⃣. Información del Curso. ❔\n";
