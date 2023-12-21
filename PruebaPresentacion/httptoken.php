@@ -1,5 +1,5 @@
 <?php
-    /* TODO:Token de acceso a tu BOT */
+    /* TODO:Token de acceso a tu BOT */ 
     $botToken ="6051932745:AAFjR-D2ew1O9bLwdtKf-hS7vaMdo74Zt3E";
 
     /* TODO:URL del Webhook */
