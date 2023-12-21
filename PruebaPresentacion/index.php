@@ -30,7 +30,7 @@ if(isset($update->message->text)){
 		$todo=(count($mensajes)-1);
 		$num=rand(0,$todo);
         $message=$mensajes[$num];
-        $message="\n\nA - Nosotros\n";
+        $message.="\n\nA - Nosotros\n";
         $message.="B - Contacto\n";
         $message.="C - Videos\n";
         $message.="D - TIPS para el auto\n";
