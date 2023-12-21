@@ -19,13 +19,23 @@ if(isset($update->message->text)){
     $text = $update->message->text;
 
     /* TODO: Comprobar si el mensaje es "/start" */
-    if($text==='/start'){
+    if($text==='Hola' or $text==='hola' or $text==='HOLA' or $text==='/start'){
 
-        $message="¡Bienvenido! Soy el BotAnderCode de Telegram. Puedes usar los siguientes comandos:\n\n";
-        $message.="/start - Iniciar Conversacion\n";
-        $message.="/menu - Mostrar menu de opciones\n";
-        $message.="/botones - Mostrar 2 botones\n";
-        $message.="/dni - Coloca el nro de DNI luego del comando\n";
+		$mensajes = array(
+			'Hola! Soy CatCor, el ChatBot 🤖 de prueba para concesionarias.',
+			'😀 Holaa!! Bienvenido, soy CatCor. Probame.',
+			'👋 Bienvenido/a. Soy un chatbot 🤖 de prueba para concesionarias.'
+		);
+		 
+		$todo=(count($mensajes)-1);
+		$num=rand(0,$todo);
+        $message=$mensajes[$num];
+        $message="\n\nA - Nosotros\n";
+        $message.="B - Contacto\n";
+        $message.="C - Videos\n";
+        $message.="D - TIPS para el auto\n";
+        $message.="E - ERRORES\n";
+        $message.="F - INICIAR SESION\n";
 
         $telegram->sendMessage($chatId,$message);
 
