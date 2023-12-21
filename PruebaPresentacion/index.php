@@ -23,7 +23,7 @@ if(isset($update->message->text)){
 
         $message="¡Bienvenido! Soy el BotAnderCode de Telegram. Puedes usar los siguientes comandos:\n\n";
         $message.="/start - Iniciar Conversacion\n";
-        $message.="/menu - Mostrar menú de opciones\n";
+        $message.="/menu - Mostrar menu de opciones\n";
         $message.="/botones - Mostrar 2 botones\n";
         $message.="/dni - Coloca el nro de DNI luego del comando\n";
 
