@@ -8,7 +8,7 @@ use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
 
 /* TODO:Configurar el token de acceso al tu BOT */
-$telegram = new BotApi('6569289791:AAHePzznMRgn560YuXHtR5B_a4IkxyQYGJ4');
+$telegram = new BotApi('6051932745:AAFjR-D2ew1O9bLwdtKf-hS7vaMdo74Zt3E');
 
 /* TODO: Obtiene la actualizacion del webwook */
 $update = json_decode(file_get_contents('php://input'));

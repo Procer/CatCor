@@ -1,9 +1,9 @@
 <?php
     /* TODO:Token de acceso a tu BOT */
-    $botToken ="6569289791:AAHePzznMRgn560YuXHtR5B_a4IkxyQYGJ4";
+    $botToken ="6051932745:AAFjR-D2ew1O9bLwdtKf-hS7vaMdo74Zt3E";
 
     /* TODO:URL del Webhook */
-    $webhookurl="https://zaratesystemgroup.com.ar/CatCor/PruebaPresentacion/index.php";
+    $webhookurl="https://zaratesystemgroup.com.ar/CatCor/Presentacion/index.php";
 
     /* TODO:configura el webhook mediante una solicitud http */
     $apiurl = "https://api.telegram.org/bot$botToken/setWebhook?url=$webhookurl";
