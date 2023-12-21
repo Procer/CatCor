@@ -34,21 +34,23 @@ if(isset($update->message->text)){
         $message.="B - Contacto\n";
         $message.="C - Videos\n";
         $message.="D - TIPS para el auto\n";
-        $message.="E - ERRORES\n";
-        $message.="F - INICIAR SESION\n";
+        $message.="E - Errores en la pantalla\n";
+        $message.="F - Iniciar sesión\n";
 
         $telegram->sendMessage($chatId,$message);
 
-    }elseif($text ==='/menu'){
+    }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
+        $informacion="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+        $telegram->sendMessage($chatId,$informacion);
 
-        $menuMessage = "Aquí está el menú de opciones, elegir la opcion que necesite:\n\n";
+        /*$menuMessage = "Aquí está el menú de opciones, elegir la opcion que necesite:\n\n";
         $menuMessage .= "1️⃣. Información del Curso. ❔\n";
         $menuMessage .= "2️⃣. Ubicacíon del local. 📍\n";
         $menuMessage .= "3️⃣. Enviar temario en pdf. 📄\n";
         $menuMessage .= "4️⃣. Audio explicando curso. 🎧\n";
         $menuMessage .= "5️⃣. Video de Introducción. ⏯️\n";
         $menuMessage .= "6️⃣. Hablar con Andercode. 🙋‍♂️\n";
-        $menuMessage .= "7️⃣. Horario de Atención. 🕜\n";
+        $menuMessage .= "7️⃣. Horario de Atención. 🕜\n";*/
 
         $telegram->sendMessage($chatId,$menuMessage);
 
