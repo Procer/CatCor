@@ -65,7 +65,7 @@ if(isset($update->message->text)){
             [
                 [
                     [
-                        'text' => 'VER',
+                        'text' => 'VER ',
                         'url' => 'https://youtu.be/peqZjKyVSeI?si=pnowa8GuVzSYnFow&t=133'
                     ],
                 ]
@@ -79,7 +79,7 @@ if(isset($update->message->text)){
             [
                 [
                     [
-                        'text' => 'VER',
+                        'text' => 'VER ',
                         'url' => 'https://youtu.be/akkYTGWO6ps?si=tI7qEIB5K5niWLEV&t=133'
                     ],
                 ]
