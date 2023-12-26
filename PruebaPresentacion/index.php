@@ -73,9 +73,21 @@ if(isset($update->message->text)){
         );
 
         $thumbpath = 'img/NissanKicks.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Nissan Kicks",null,$keyboard);
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Nissan Kicks - Video explicativo",null,$keyboard);
   
-        
+        $keyboard = new InlineKeyboardMarkup(
+            [
+                [
+                    [
+                        'text' => 'VER',
+                        'url' => 'https://youtu.be/akkYTGWO6ps?si=tI7qEIB5K5niWLEV&t=133'
+                    ],
+                ]
+            ]
+        );
+
+        $thumbpath = 'img/FordTerritory.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory - Video explicativo",null,$keyboard);       
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
 
         $numeroDNI = $matches[1];
