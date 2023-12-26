@@ -61,7 +61,7 @@ if(isset($update->message->text)){
 
     }elseif($text ==='C' or $text ==='c'){
 
-        $keyboard = new InlineKeyboardMarkup(
+        $keyboard1 = new InlineKeyboardMarkup(
             [
                 [
                     [
@@ -72,10 +72,10 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'assets/FordTerritory.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Nissan Kicks",null,$keyboard);
+        $thumbpath1 = 'assets/FordTerritory.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath1),"Nissan Kicks",null,$keyboard1);
 
-        $keyboard = new InlineKeyboardMarkup(
+        $keyboard2 = new InlineKeyboardMarkup(
             [
                 [
                     [
@@ -86,8 +86,8 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'assets/NissanKicks.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory",null,$keyboard);
+        $thumbpath2 = 'assets/NissanKicks.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath2),"Ford Territory",null,$keyboard2);
   
         
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
