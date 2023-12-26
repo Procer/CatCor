@@ -59,25 +59,37 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$menuMessage);
 
-    }elseif($text ==='/botones'){
+    }elseif($text ==='C' or $text ==='c'){
 
         $keyboard = new InlineKeyboardMarkup(
             [
                 [
                     [
-                        'text' => 'Ir',
-                        'url' => 'https://youtu.be/OL63dvaqyTY'
+                        'text' => 'VER',
+                        'url' => 'https://youtu.be/peqZjKyVSeI?si=pnowa8GuVzSYnFow&t=133'
                     ],
-                    [
-                        'text' => 'Web',
-                        'url' => 'https://anderson-bastidas.com'
-                    ]
                 ]
             ]
         );
 
-        $thumbpath = 'assets/img.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Unete al Canal de Youtube Andercode",null,$keyboard);
+        $thumbpath = 'assets/FordTerritory.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Nissan Kicks",null,$keyboard);
+
+        $keyboard = new InlineKeyboardMarkup(
+            [
+                [
+                    [
+                        'text' => 'VER',
+                        'url' => 'https://youtu.be/akkYTGWO6ps?si=tI7qEIB5K5niWLEV&t=133'
+                    ],
+                ]
+            ]
+        );
+
+        $thumbpath = 'assets/NissanKicks.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory",null,$keyboard);
+  
+        
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
 
         $numeroDNI = $matches[1];
@@ -119,9 +131,9 @@ if(isset($update->message->text)){
         $informacion="📍 <b>Dirección:</b> Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n\n";
         $informacion.="📱 Telefono: 03487 666666 / 03487 555555 / 03487 444444\n\n";
         $informacion.="🕐 Horario de atencion: 08:00 hs - 20:00 hs\n\n";        
-        $informacion.="🔗 Sitio Web: https://zaratesystemgroup.com.ar/\n\n";
-        $informacion.="🔗 INSTAGRAM: https://www.instagram.com/zaratesystemgroup/\n\n";
-        $informacion.="🔗 FACEBOOK: https://www.facebook.com/zarasystemgroup/\n\n";           
+        $informacion.="🔗 Sitio Web\nhttps://zaratesystemgroup.com.ar/\n\n";
+        $informacion.="🔗 INSTAGRAM\nhttps://www.instagram.com/zaratesystemgroup/\n\n";
+        $informacion.="🔗 FACEBOOK\nhttps://www.facebook.com/zarasystemgroup/\n\n";           
         $telegram->sendMessage($chatId,$informacion);
 
     }elseif($text === '3'){
