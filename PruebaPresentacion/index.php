@@ -44,7 +44,8 @@ if(isset($update->message->text)){
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria X",null,$keyboard);
 
 
-        $informacion="Lorem Ipsum is simply dummy text of the printing and typesetting industry. \nLorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. \n\nIt has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+        $informacion="Desde el año 2003 se destaca por ser la concesionaria número uno en ventas y servicios de Volkswagen a nivel país.
+        \nNuestra calidad de servicio y atención al cliente está certificada por la norma ISO 9001:2008 Ref. Tüv Süd.";
         $telegram->sendMessage($chatId,$informacion);
 
         /*$menuMessage = "Aquí está el menú de opciones, elegir la opcion que necesite:\n\n";
@@ -108,13 +109,20 @@ if(isset($update->message->text)){
         $informacion="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
         $telegram->sendMessage($chatId,$informacion);
 
-    }elseif($text === '2'){
+    }elseif($text === 'B' or $text === 'b'){
 
         /* TODO: Define las coordenadas de latitud y longitud */
-        $latitude = -77.031159;
-        $longitude = -12.0522495;
+        $latitude = -59.034106;
+        $longitude = -34.099206;
         /* TODO: Envia ubicación */
         $telegram->sendLocation($chatId,$longitude,$latitude);
+        $informacion="Dirección: Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n";
+        $informacion.="Telefono: 03487 666666 / 03487 555555 / 03487 444444\n";
+        $informacion.="Sitio Web: https://zaratesystemgroup.com.ar/\n";
+        $informacion.="INSTAGRAM: https://www.instagram.com/zaratesystemgroup/\n";
+        $informacion.="FACEBOOK: https://www.facebook.com/zarasystemgroup/\n";        
+        $informacion.="YOUTUBE: https://www.youtube.com/channel/UC9pQkPVJD1f25xjWdGRBClA\n";            
+        $telegram->sendMessage($chatId,$informacion);
 
     }elseif($text === '3'){
 
