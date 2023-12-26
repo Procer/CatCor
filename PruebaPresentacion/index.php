@@ -33,13 +33,13 @@ if(isset($update->message->text)){
 		$num=rand(0,$todo);
         $message=$mensajes[$num];
         $message.="\n\nA - Nosotros\n";
-        $message.="B - Contacto\n";
+        $message.="<b>B</b> - Contacto\n";
         $message.="C - Videos\n";
         $message.="D - TIPS para el auto\n";
         $message.="E - Errores en la pantalla\n";
         $message.="F - Iniciar sesión\n";
 
-        $telegram->sendMessage($chatId,$message);
+        $telegram->sendMessage($chatId,HTML,$message);
 
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
