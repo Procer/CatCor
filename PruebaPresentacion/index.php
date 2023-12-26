@@ -108,7 +108,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$respuesta);
 
-    }elseif($text === 'D'){
+    }elseif($text === 'D' or $text === 'd'){
 
         $keyboard = new InlineKeyboardMarkup(
             [
@@ -121,8 +121,8 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'img/NissanKicks.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS ANDROIDAUTO",null,$keyboard);
+        $thumbpath = 'img/AndroidCar.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS ANDROID AUTO",null,$keyboard);
   
         $keyboard = new InlineKeyboardMarkup(
             [
@@ -135,8 +135,8 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'img/NissanKicks.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLECAR",null,$keyboard);
+        $thumbpath = 'img/AppleCarPlay.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
         $informacion="📌  Usá de forma correcta del freno de mano: Solo usalo para dejarlo estacionado en una pendiente.\n\n";
         $informacion.="📌  Mantené limpio el filtro del aire acondicionado: Para evitar que acumule polvo y suciedad.\n\n";
