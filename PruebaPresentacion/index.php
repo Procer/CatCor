@@ -4,7 +4,7 @@ require_once("include/vendor/autoload.php");
 require_once("config/conexion.php");
 require_once("models/Persona.php");
 
-require_once("SubMenu.php");
+require("SubMenu.php");
 
 use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
@@ -108,9 +108,46 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$respuesta);
 
-    }elseif($text === '1'){
+    }elseif($text === 'D'){
 
-        $informacion="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+        $keyboard = new InlineKeyboardMarkup(
+            [
+                [
+                    [
+                        'text' => 'VER ',
+                        'url' => 'https://www.youtube.com/watch?v=a98y9z1VrFM'
+                    ],
+                ]
+            ]
+        );
+
+        $thumbpath = 'img/NissanKicks.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS ANDROIDAUTO",null,$keyboard);
+  
+        $keyboard = new InlineKeyboardMarkup(
+            [
+                [
+                    [
+                        'text' => 'VER ',
+                        'url' => 'https://www.youtube.com/watch?v=ynycVOn15Xw'
+                    ],
+                ]
+            ]
+        );
+
+        $thumbpath = 'img/NissanKicks.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLECAR",null,$keyboard);
+
+        $informacion="📌  Usá de forma correcta del freno de mano: Solo usalo para dejarlo estacionado en una pendiente.\n\n";
+        $informacion.="📌  Mantené limpio el filtro del aire acondicionado: Para evitar que acumule polvo y suciedad.\n\n";
+        $informacion.="📌  Controlá la presión de los neumáticos: Va a permitir que duren más, brindándote mayor seguridad.\n\n";
+        $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: Crea presión que puede desgastar los componentes internos.\n\n";
+        $informacion.="📌  Siempre mantené un cuarto de tanque de combustible lleno: No olvides considerar las distancias programadas.\n\n";
+        $informacion.="📌  Evitá manejar con el pie en el embrague: Si patina continuamente, puede quemarse.\n\n";
+        $informacion.="📌  Cuidados al lavar el exterior del auto: consejos para proteger la pintura y la carrocería: Lavalo al menos 2 veces al mes y hacelo con paños de microfibra.\n\n";
+        $informacion.="📌  Controlá el nivel de aceite: Con el objetivo de prevenir fallas y daños graves.\n\n";
+        $informacion.="📌  Revisá el líquido refrigerante: Para que la temperatura del motor se mantenga estable.\n\n";
+        $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: Esto asegura la estabilidad y confort..\n\n";
         $telegram->sendMessage($chatId,$informacion);
 
     }elseif($text === 'B' or $text === 'b'){
