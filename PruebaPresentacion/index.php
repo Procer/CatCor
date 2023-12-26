@@ -41,10 +41,10 @@ if(isset($update->message->text)){
 
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria X",null,$keyboard);
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null,$keyboard);
 
 
-        $informacion="Desde el año 2003 se destaca por ser la concesionaria número uno en ventas y servicios de Volkswagen a nivel país.
+        $informacion="Desde el año 2003 se destaca por ser la concesionaria número uno en ventas y servicios de Tesla a nivel país.
         \nNuestra calidad de servicio y atención al cliente está certificada por la norma ISO 9001:2008 Ref. Tüv Süd.";
         $telegram->sendMessage($chatId,$informacion);
 
@@ -115,7 +115,7 @@ if(isset($update->message->text)){
         $latitude = -59.034106;
         $longitude = -34.099206;
         /* TODO: Envia ubicación */
-        $telegram->sendLocation($chatId,$longitude,$latitude);
+        $telegram->sendLocation($chatId,new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null, $longitude,$latitude);
         $informacion="Dirección: Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n";
         $informacion.="Telefono: 03487 666666 / 03487 555555 / 03487 444444\n";
         $informacion.="Sitio Web: https://zaratesystemgroup.com.ar/\n";
