@@ -115,13 +115,13 @@ if(isset($update->message->text)){
         $latitude = -59.034106;
         $longitude = -34.099206;
         /* TODO: Envia ubicación */
-        $telegram->sendLocation($chatId,new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null, $longitude,$latitude);
-        $informacion="Dirección: Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n";
-        $informacion.="Telefono: 03487 666666 / 03487 555555 / 03487 444444\n";
-        $informacion.="Sitio Web: https://zaratesystemgroup.com.ar/\n";
-        $informacion.="INSTAGRAM: https://www.instagram.com/zaratesystemgroup/\n";
-        $informacion.="FACEBOOK: https://www.facebook.com/zarasystemgroup/\n";        
-        $informacion.="YOUTUBE: https://www.youtube.com/channel/UC9pQkPVJD1f25xjWdGRBClA\n";            
+        $telegram->sendLocation($chatId,$longitude,$latitude);
+        $informacion="📍 <b>Dirección:</b> Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n\n";
+        $informacion.="📱 Telefono: 03487 666666 / 03487 555555 / 03487 444444\n\n";
+        $informacion.="🕐 Horario de atencion: 08:00 hs - 20:00 hs\n\n";        
+        $informacion.="🔗 Sitio Web: https://zaratesystemgroup.com.ar/\n\n";
+        $informacion.="🔗 INSTAGRAM: https://www.instagram.com/zaratesystemgroup/\n\n";
+        $informacion.="🔗 FACEBOOK: https://www.facebook.com/zarasystemgroup/\n\n";           
         $telegram->sendMessage($chatId,$informacion);
 
     }elseif($text === '3'){
