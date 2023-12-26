@@ -72,7 +72,7 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'assets/img.png';
+        $thumbpath = 'assets/NissanKicks.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Nissan Kicks",null,$keyboard);
   
         
