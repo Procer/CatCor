@@ -29,9 +29,13 @@ if(isset($update->message->text)){
 			'👋 Bienvenido/a. Soy un chatbot 🤖 de prueba para concesionarias.'
 		);
 		 
-		$todo=(count($mensajes)-1);
-		$num=rand(0,$todo);
-        $message=$mensajes[$num];
+        shuffle($mensajes);
+        $i = 1;
+        foreach ($mensajes as $mensaje) {
+          if($i < 2)
+          $message= $mensaje;
+          $i++;
+        }
         $message.="\n\nA - Nosotros\n";
         $message.="<b>B</b> - Contacto\n";
         $message.="C - Videos\n";
@@ -39,7 +43,7 @@ if(isset($update->message->text)){
         $message.="E - Errores en la pantalla\n";
         $message.="F - Iniciar sesión\n";
 
-        $telegram->sendMessage($chatId,'HTML',$message);
+        $telegram->sendMessage($chatId,$message);
 
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
