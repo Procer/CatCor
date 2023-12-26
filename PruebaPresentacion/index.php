@@ -39,7 +39,7 @@ if(isset($update->message->text)){
         $message.="E - Errores en la pantalla\n";
         $message.="F - Iniciar sesión\n";
 
-        $telegram->sendMessage($chatId,HTML,$message);
+        $telegram->sendMessage($chatId,'HTML',$message);
 
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
