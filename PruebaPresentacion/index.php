@@ -4,6 +4,8 @@ require_once("include/vendor/autoload.php");
 require_once("config/conexion.php");
 require_once("models/Persona.php");
 
+require_once("SubMenu.php");
+
 use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Types\Inline\InlineKeyboardMarkup;
 
@@ -39,6 +41,8 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$message);
 
+        $telegram->sendMessage($chatId,$SubMenu);
+
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null,$keyboard);
@@ -58,6 +62,8 @@ if(isset($update->message->text)){
         $menuMessage .= "7️⃣. Horario de Atención. 🕜\n";*/
 
         $telegram->sendMessage($chatId,$menuMessage);
+
+        $telegram->sendMessage($chatId,$SubMenu);
 
     }elseif($text ==='C' or $text ==='c'){
 
@@ -88,6 +94,7 @@ if(isset($update->message->text)){
 
         $thumbpath = 'img/FordTerritory.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory - Video explicativo",null,$keyboard);       
+        $telegram->sendMessage($chatId,$SubMenu);        
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
 
         $numeroDNI = $matches[1];
