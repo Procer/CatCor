@@ -36,11 +36,11 @@ if(isset($update->message->text)){
           $message= $mensaje;
           $i++;
         }
-        $message.="\n\n<b>A</b> - Nosotros\n";
-        $message.="<b>B</b> - Contacto\n";
-        $message.="<b>C</b> - Videos\n";
-        $message.="<b>D</b> - TIPS para el auto\n";
-        $message.="<b>E</b> - Errores en la pantalla\n";
+        $message.="\n\n<b>A</b> - /Nosotros\n";
+        $message.="<b>B</b> - /Contacto\n";
+        $message.="<b>C</b> - /Videos\n";
+        $message.="<b>D</b> - /TIPS\n";
+        $message.="<b>E</b> - /ErroresPantalla\n";
         $message.="<b>F</b> - /IniciarSesion\n";
 
         $telegram->sendMessage($chatId,$message, 'HTML');
