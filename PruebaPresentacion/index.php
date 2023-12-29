@@ -41,7 +41,7 @@ if(isset($update->message->text)){
         $message.="<b>C</b> - Videos\n";
         $message.="<b>D</b> - TIPS para el auto\n";
         $message.="<b>E</b> - Errores en la pantalla\n";
-        $message.="<b>F</b> - /IniciarSesión\n";
+        $message.="/IniciarSesión\n";
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
