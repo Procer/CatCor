@@ -41,7 +41,7 @@ if(isset($update->message->text)){
         $message.="<b>C</b> - Videos\n";
         $message.="<b>D</b> - TIPS para el auto\n";
         $message.="<b>E</b> - Errores en la pantalla\n";
-        $message.="/IniciarSesión\n";
+        $message.="<b>F</b> - /IniciarSesion\n";
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
@@ -169,7 +169,7 @@ if(isset($update->message->text)){
         $informacion.="🔗 <b>FACEBOOK</b>\nhttps://www.facebook.com/zarasystemgroup/\n\n";           
         $telegram->sendMessage($chatId,$informacion, 'HTML');
         $telegram->sendMessage($chatId,$SubMenu,'HTML');        
-    }elseif($text === '/IniciarSesión3'){
+    }elseif($text === '/IniciarSesion'){
 
        /* $pdfpath = 'assets/test.pdf';
         $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
