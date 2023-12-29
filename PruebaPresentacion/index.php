@@ -45,7 +45,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
-    }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros'){
+    }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros' or $text ==='/Nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null,$keyboard);
 
@@ -56,7 +56,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$SubMenu,'HTML');
 
-    }elseif($text ==='C' or $text ==='c'){
+    }elseif($text ==='C' or $text ==='c' or $text ==='/Videos'){
 
         $keyboard = new InlineKeyboardMarkup(
             [
@@ -112,7 +112,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$respuesta);
 
-    }elseif($text === 'D' or $text === 'd'){
+    }elseif($text === 'D' or $text === 'd' or $text === '/TIPS'){
 
         $keyboard = new InlineKeyboardMarkup(
             [
@@ -154,7 +154,7 @@ if(isset($update->message->text)){
         $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <i>Esto asegura la estabilidad y confort.</i>\n\n";
         $telegram->sendMessage($chatId,$informacion);
 
-    }elseif($text === 'B' or $text === 'b'){
+    }elseif($text === 'B' or $text === 'b' or $text === '/Contacto'){
 
         /* TODO: Define las coordenadas de latitud y longitud */
         $latitude = -59.034106;
