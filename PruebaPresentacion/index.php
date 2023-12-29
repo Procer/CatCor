@@ -36,12 +36,12 @@ if(isset($update->message->text)){
           $message= $mensaje;
           $i++;
         }
-        $message.="\n\nA - Nosotros\n";
+        $message.="\n\n<b>A</b> - Nosotros\n";
         $message.="<b>B</b> - Contacto\n";
-        $message.="C - Videos\n";
-        $message.="D - TIPS para el auto\n";
-        $message.="E - Errores en la pantalla\n";
-        $message.="F - Iniciar sesión\n";
+        $message.="<b>C</b> - Videos\n";
+        $message.="<b>D</b> - TIPS para el auto\n";
+        $message.="<b>E</b> - Errores en la pantalla\n";
+        $message.="<b>F</b> - /IniciarSesión\n";
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
@@ -54,7 +54,7 @@ if(isset($update->message->text)){
         \nNuestra calidad de servicio y atención al cliente está certificada por la norma ISO 9001:2008 Ref. Tüv Süd.";
         $telegram->sendMessage($chatId,$informacion);
 
-        $telegram->sendMessage($chatId,$SubMenu);
+        $telegram->sendMessage($chatId,$SubMenu,'HTML');
 
     }elseif($text ==='C' or $text ==='c'){
 
@@ -85,7 +85,7 @@ if(isset($update->message->text)){
 
         $thumbpath = 'img/FordTerritory.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory - Video explicativo",null,$keyboard);       
-        $telegram->sendMessage($chatId,$SubMenu);        
+        $telegram->sendMessage($chatId,$SubMenu,'HTML');        
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
 
         $numeroDNI = $matches[1];
@@ -142,16 +142,16 @@ if(isset($update->message->text)){
         $thumbpath = 'img/AppleCarPlay.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
-        $informacion="📌  Usá de forma correcta del freno de mano: Solo usalo para dejarlo estacionado en una pendiente.\n\n";
-        $informacion.="📌  Mantené limpio el filtro del aire acondicionado: Para evitar que acumule polvo y suciedad.\n\n";
-        $informacion.="📌  Controlá la presión de los neumáticos: Va a permitir que duren más, brindándote mayor seguridad.\n\n";
-        $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: Crea presión que puede desgastar los componentes internos.\n\n";
-        $informacion.="📌  Siempre mantené un cuarto de tanque de combustible lleno: No olvides considerar las distancias programadas.\n\n";
-        $informacion.="📌  Evitá manejar con el pie en el embrague: Si patina continuamente, puede quemarse.\n\n";
-        $informacion.="📌  Cuidados al lavar el exterior del auto: consejos para proteger la pintura y la carrocería: Lavalo al menos 2 veces al mes y hacelo con paños de microfibra.\n\n";
-        $informacion.="📌  Controlá el nivel de aceite: Con el objetivo de prevenir fallas y daños graves.\n\n";
-        $informacion.="📌  Revisá el líquido refrigerante: Para que la temperatura del motor se mantenga estable.\n\n";
-        $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: Esto asegura la estabilidad y confort..\n\n";
+        $informacion="📌  Usá de forma correcta del freno de mano: <i>Solo usalo para dejarlo estacionado en una pendiente.</i>\n\n";
+        $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <i>Para evitar que acumule polvo y suciedad.</i>\n\n";
+        $informacion.="📌  Controlá la presión de los neumáticos: <i>Va a permitir que duren más, brindándote mayor seguridad.</i>\n\n";
+        $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: <i>Crea presión que puede desgastar los componentes internos.</i>\n\n";
+        $informacion.="📌  Siempre mantené un cuarto de tanque de combustible lleno: <i>No olvides considerar las distancias programadas.</i>\n\n";
+        $informacion.="📌  Evitá manejar con el pie en el embrague: <i>Si patina continuamente, puede quemarse.</i>\n\n";
+        $informacion.="📌  Cuidados al lavar el exterior del auto: <i>consejos para proteger la pintura y la carrocería: Lavalo al menos 2 veces al mes y hacelo con paños de microfibra.</i>\n\n";
+        $informacion.="📌  Controlá el nivel de aceite: <i>Con el objetivo de prevenir fallas y daños graves.</i>\n\n";
+        $informacion.="📌  Revisá el líquido refrigerante: <i>Para que la temperatura del motor se mantenga estable.</i>\n\n";
+        $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <i>Esto asegura la estabilidad y confort.</i>\n\n";
         $telegram->sendMessage($chatId,$informacion);
 
     }elseif($text === 'B' or $text === 'b'){
@@ -162,20 +162,20 @@ if(isset($update->message->text)){
         /* TODO: Envia ubicación */
         $telegram->sendLocation($chatId,$longitude,$latitude);
         $informacion="📍 <b>Dirección:</b> Hipólito Yrigoyen 1757, B2800 Zárate, Provincia de Buenos Aires, Argentina.\n\n";
-        $informacion.="📱 Telefono: 03487 666666 / 03487 555555 / 03487 444444\n\n";
-        $informacion.="🕐 Horario de atencion: 08:00 hs - 20:00 hs\n\n";        
-        $informacion.="🔗 Sitio Web\nhttps://zaratesystemgroup.com.ar/\n\n";
-        $informacion.="🔗 INSTAGRAM\nhttps://www.instagram.com/zaratesystemgroup/\n\n";
-        $informacion.="🔗 FACEBOOK\nhttps://www.facebook.com/zarasystemgroup/\n\n";           
-        $telegram->sendMessage($chatId,$informacion);
+        $informacion.="📱 <b>Telefono:</b> 03487 666666 / 03487 555555 / 03487 444444\n\n";
+        $informacion.="🕐 <b>Horario de atencion:</b> 08:00 hs - 20:00 hs\n\n";        
+        $informacion.="🔗 <b>Sitio Web</b>\nhttps://zaratesystemgroup.com.ar/\n\n";
+        $informacion.="🔗 <b>INSTAGRAM</b>\nhttps://www.instagram.com/zaratesystemgroup/\n\n";
+        $informacion.="🔗 <b>FACEBOOK</b>\nhttps://www.facebook.com/zarasystemgroup/\n\n";           
+        $telegram->sendMessage($chatId,$informacion, 'HTML');
+        $telegram->sendMessage($chatId,$SubMenu,'HTML');        
+    }elseif($text === '/IniciarSesión3'){
 
-    }elseif($text === '3'){
+       /* $pdfpath = 'assets/test.pdf';
+        $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
 
-        $pdfpath = 'assets/test.pdf';
-        $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));
-
-        $message = "Aquí tienes el archivo pdf que solicitaste.";
-        $telegram->sendMessage($chatId,$message);
+        $message = "Ingrese su <b>DNI</b>";
+        $telegram->sendMessage($chatId,$message,'HTML');
 
     }elseif($text === '4'){
 
