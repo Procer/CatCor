@@ -217,12 +217,12 @@ if(isset($update->message->text)){
     }else{
 
         //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
-        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) FROM usuarios where dni = $text");
+        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) FROM usuario where dni = $text");
         $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
         if($SqlCheckUsuariosResult['0'] == 0){
-            $defaultMesage="SELECT count(*) FROM usuarios where dni = $text";
+            $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
         } else {
-            $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuarios where dni = $text");
+            $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
             $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
             $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento";
         }
