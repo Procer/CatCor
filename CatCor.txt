@@ -16,3 +16,8 @@ Chatbot
 	  1. Datos del vehículo
 	  2. Datos del conductor
 	  3. Vencimientos: VTV, cambio cubiertas, service, correa y distribucion, registro, etc.
+
+
+DB: CatCorBot
+User DB: zaratesy_CatCorBot
+Pass DB: Cata1983.

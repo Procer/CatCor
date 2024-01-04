@@ -17,5 +17,5 @@
         }
     }*/
 
-    $conn = mysqli_connect("localhost", "zaratesy_CatCorBot", "Cata1983", "CatCorBot");    
+    $conn = mysqli_connect("localhost", "zaratesy_CatCorBot", "Cata1983.", "CatCorBot");    
 ?>
