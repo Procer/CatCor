@@ -220,7 +220,7 @@ if(isset($update->message->text)){
         $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) FROM usuarios where dni = $text");
         $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
         if($SqlCheckUsuariosResult['0'] == 0){
-            $defaultMesage="Disculpe, no existe ese DNI.";
+            $defaultMesage="SELECT count(*) FROM usuarios where dni = $text";
         } else {
             $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuarios where dni = $text");
             $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
