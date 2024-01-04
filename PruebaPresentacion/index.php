@@ -217,12 +217,14 @@ if(isset($update->message->text)){
     }else{
 
         //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
-        $SqlCheckUsuario = mysqli_query($conn, "SELECT * FROM usuarios where dni = $text");
-        $SqlInfoUsuarios = mysqli_fetch_assoc($SqlCheckUsuario);
-        if(isnull($SqlInfoUsuarios['0'])){
+        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) FROM usuarios where dni = $text");
+        $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
+        if($SqlCheckUsuariosResult['0'] == 0){
             $defaultMesage="Disculpe, no existe ese DNI.";
         } else {
-            $defaultMesage="Hola ".$SqlInfoUsuarios['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento";
+            $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuarios where dni = $text");
+            $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
+            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento";
         }
         $telegram->sendMessage($chatId,$defaultMesage);
 
