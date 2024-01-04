@@ -217,9 +217,9 @@ if(isset($update->message->text)){
     }else{
 
         //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
-        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) FROM usuario where dni = $text");
+        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
         $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
-        if($SqlCheckUsuariosResult['0'] == 0){
+        if($SqlCheckUsuariosResult['Cantidad'] == 0){
             $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
         } else {
             $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
