@@ -21,6 +21,7 @@ if(isset($update->message->text)){
     $text = $update->message->text;
 
     /* TODO: Comprobar si el mensaje es "/start" */
+/* ############ HOLA ############*/
     if($text==='Hola' or $text==='hola' or $text==='HOLA' or $text==='/start'){
 
 		$mensajes = array(
@@ -45,6 +46,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
+/* ############ NOSOTROS ############*/        
     }elseif($text ==='A' or $text ==='a' or $text ==='Nosotros' or $text ==='nosotros' or $text ==='/Nosotros'){
         $thumbpath = 'img/NosotrosEjemplo.jpg';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Concesionaria A. O. Sanchez  ",null,$keyboard);
@@ -85,7 +87,9 @@ if(isset($update->message->text)){
 
         $thumbpath = 'img/FordTerritory.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"Ford Territory - Video explicativo",null,$keyboard);       
-        $telegram->sendMessage($chatId,$SubMenu,'HTML');        
+        $telegram->sendMessage($chatId,$SubMenu,'HTML');     
+
+/* ############  ############*/        
     }elseif(preg_match('/^\/dnitest (\d+)$/',$text,$matches)){
 
         $numeroDNI = $matches[1];
@@ -112,6 +116,7 @@ if(isset($update->message->text)){
 
         $telegram->sendMessage($chatId,$respuesta);
 
+/* ############ TIPS ############*/        
     }elseif($text === 'D' or $text === 'd' or $text === '/TIPS'){
 
         $keyboard = new InlineKeyboardMarkup(
@@ -154,6 +159,7 @@ if(isset($update->message->text)){
         $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <i>Esto asegura la estabilidad y confort.</i>\n\n";
         $telegram->sendMessage($chatId,$informacion);
 
+/* ############ CONTACTO ############*/        
     }elseif($text === 'B' or $text === 'b' or $text === '/Contacto'){
 
         /* TODO: Define las coordenadas de latitud y longitud */
@@ -168,7 +174,9 @@ if(isset($update->message->text)){
         $informacion.="🔗 <b>INSTAGRAM</b>\nhttps://www.instagram.com/zaratesystemgroup/\n\n";
         $informacion.="🔗 <b>FACEBOOK</b>\nhttps://www.facebook.com/zarasystemgroup/\n\n";           
         $telegram->sendMessage($chatId,$informacion, 'HTML');
-        $telegram->sendMessage($chatId,$SubMenu,'HTML');        
+        $telegram->sendMessage($chatId,$SubMenu,'HTML');  
+        
+/* ############ INICIAR SESION ############*/        
     }elseif($text === '/IniciarSesion'){
 
        /* $pdfpath = 'assets/test.pdf';
@@ -208,7 +216,14 @@ if(isset($update->message->text)){
 
     }else{
 
-        $defaultMesage="No entiendo ese comando.Puedes usar /start para iniciar o /menu para ver el menu";
+        //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
+        $SqlCheckUsuario = mysqli_query($conn, "SELECT * FROM usuarios where dni = $text");
+        $SqlInfoUsuarios = mysqli_fetch_assoc($SqlCheckUsuario);
+        if(isnull($SqlInfoUsuarios['0'])){
+            $defaultMesage="Disculpe, no existe ese DNI.";
+        } else {
+            $defaultMesage="Hola ".$SqlInfoUsuarios['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento";
+        }
         $telegram->sendMessage($chatId,$defaultMesage);
 
     }
