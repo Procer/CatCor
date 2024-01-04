@@ -1,5 +1,5 @@
 <?php
-    class Conectar{
+   /* class Conectar{
         protected $dbh;
 
         protected function Conexion(){
@@ -15,5 +15,7 @@
         public function set_names(){
             return $this->dbh->query("SET NAMES 'utf8'");
         }
-    }
+    }*/
+
+    $conn = mysqli_connect("localhost", "zaratesy_CatCorBot", "Cata1983", "CatCorBot");    
 ?>
