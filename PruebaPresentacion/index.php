@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("include/vendor/autoload.php");
 
 require_once("config/conexion.php");
@@ -219,14 +221,15 @@ if(isset($update->message->text)){
         //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
         $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
         $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
-        if($SqlCheckUsuariosResult['Cantidad'] == 0){
+        if($SqlCheckUsuariosResult['Cantidad'] == 0){ //SI NO EXITE DNI
             $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
-        } else {
+        } else { //SI EXISTE DNI
+            $_SESSION['dni'] = $text;
             $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
             $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
-            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento";
+            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento $_SESSION['dni']";
         }
-        $telegram->sendMessage($chatId,$defaultMesage);
+        $telegram->sendMessage($chatId,$defaultMesage, 'HTML');
 
     }
 
