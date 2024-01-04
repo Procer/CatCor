@@ -235,8 +235,8 @@ if(isset($update->message->text)){
             $telegram->sendMessage($chatId,$SubMenu,'HTML');
         }
         if($_SESSION['FlagDNI'] == 0){
-            $defaultMesage="No entiendo ese comando.Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /IniciarSesion";
-            $telegram->sendMessage($chatId,$SubMenu,'HTML');
+            $defaultMesage="No entiendo ese comando. Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /IniciarSesion";
+            $telegram->sendMessage($chatId,$defaultMesage,'HTML');
         }
        
     }
