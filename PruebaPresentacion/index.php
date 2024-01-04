@@ -219,7 +219,7 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,"Hola como estas?");
 
     }else{
-        if($_SESSION['FlagDNI'] == 1){}
+        if($_SESSION['FlagDNI'] == 1){
             //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
             $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
             $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
