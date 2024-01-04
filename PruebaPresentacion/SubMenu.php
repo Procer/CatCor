@@ -1,6 +1,6 @@
 <?php
 
-$SubMenu ="\n\n<b>A</b> - /Nosotros | <b>B</b> - /Contacto | <b>C</b> - /Videos | <b>D</b> - /TIPS | <b>E</b> - /ErroresPantalla | <b>F</b> - /IniciarSesion\n";
+$SubMenu ="\n\n <em>otras opciones</em>\n\n/Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /IniciarSesion\n";
 
 
 ?>
