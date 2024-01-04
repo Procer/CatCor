@@ -159,7 +159,7 @@ if(isset($update->message->text)){
         $informacion.="📌  Controlá el nivel de aceite: <em>Con el objetivo de prevenir fallas y daños graves.</em>\n\n";
         $informacion.="📌  Revisá el líquido refrigerante: <em>Para que la temperatura del motor se mantenga estable.</em>\n\n";
         $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <em>Esto asegura la estabilidad y confort.</em>\n\n";
-        $telegram->sendMessage($chatId,$informacion);
+        $telegram->sendMessage($chatId,$informacion,'HTML');
 
 /* ############ CONTACTO ############*/        
     }elseif($text === 'B' or $text === 'b' or $text === '/Contacto'){
