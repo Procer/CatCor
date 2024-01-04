@@ -2,7 +2,7 @@
 require_once("include/vendor/autoload.php");
 
 require_once("config/conexion.php");
-require_once("models/Persona.php");
+//require_once("models/Persona.php");
 
 require("SubMenu.php");
 
