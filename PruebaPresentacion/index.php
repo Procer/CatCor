@@ -149,16 +149,16 @@ if(isset($update->message->text)){
         $thumbpath = 'img/AppleCarPlay.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
-        $informacion="📌  Usá de forma correcta del freno de mano: <i>Solo usalo para dejarlo estacionado en una pendiente.</i>\n\n";
-        $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <i>Para evitar que acumule polvo y suciedad.</i>\n\n";
-        $informacion.="📌  Controlá la presión de los neumáticos: <i>Va a permitir que duren más, brindándote mayor seguridad.</i>\n\n";
-        $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: <i>Crea presión que puede desgastar los componentes internos.</i>\n\n";
-        $informacion.="📌  Siempre mantené un cuarto de tanque de combustible lleno: <i>No olvides considerar las distancias programadas.</i>\n\n";
-        $informacion.="📌  Evitá manejar con el pie en el embrague: <i>Si patina continuamente, puede quemarse.</i>\n\n";
-        $informacion.="📌  Cuidados al lavar el exterior del auto: <i>consejos para proteger la pintura y la carrocería: Lavalo al menos 2 veces al mes y hacelo con paños de microfibra.</i>\n\n";
-        $informacion.="📌  Controlá el nivel de aceite: <i>Con el objetivo de prevenir fallas y daños graves.</i>\n\n";
-        $informacion.="📌  Revisá el líquido refrigerante: <i>Para que la temperatura del motor se mantenga estable.</i>\n\n";
-        $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <i>Esto asegura la estabilidad y confort.</i>\n\n";
+        $informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
+        $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <em>Para evitar que acumule polvo y suciedad.</em>\n\n";
+        $informacion.="📌  Controlá la presión de los neumáticos: <em>Va a permitir que duren más, brindándote mayor seguridad.</em>\n\n";
+        $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: <em>Crea presión que puede desgastar los componentes internos.</em>\n\n";
+        $informacion.="📌  Siempre mantené un cuarto de tanque de combustible lleno: <em>No olvides considerar las distancias programadas.</em>\n\n";
+        $informacion.="📌  Evitá manejar con el pie en el embrague: <em>Si patina continuamente, puede quemarse.</em>\n\n";
+        $informacion.="📌  Cuidados al lavar el exterior del auto: <em>consejos para proteger la pintura y la carrocería: Lavalo al menos 2 veces al mes y hacelo con paños de microfibra.</em>\n\n";
+        $informacion.="📌  Controlá el nivel de aceite: <em>Con el objetivo de prevenir fallas y daños graves.</em>\n\n";
+        $informacion.="📌  Revisá el líquido refrigerante: <em>Para que la temperatura del motor se mantenga estable.</em>\n\n";
+        $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <em>Esto asegura la estabilidad y confort.</em>\n\n";
         $telegram->sendMessage($chatId,$informacion);
 
 /* ############ CONTACTO ############*/        
