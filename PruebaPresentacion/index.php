@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['FlagDNI'] = 0;
 
 require_once("include/vendor/autoload.php");
 
@@ -186,6 +187,7 @@ if(isset($update->message->text)){
 
         $message = "Ingrese su <b>DNI</b>";
         $telegram->sendMessage($chatId,$message,'HTML');
+        $_SESSION['FlagDNI'] = 1;
 
     }elseif($text === '4'){
 
@@ -217,21 +219,26 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,"Hola como estas?");
 
     }else{
-
-        //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
-        $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
-        $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
-        if($SqlCheckUsuariosResult['Cantidad'] == 0){ //SI NO EXITE DNI
-            $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
-        } else { //SI EXISTE DNI
-            $_SESSION['dni'] = $text;
-            $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
-            $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
-            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProximoVencimiento /Mantenimientos ".$_SESSION['dni'];
+        if($_SESSION['FlagDNI'] == 1){}
+            //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
+            $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
+            $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
+            if($SqlCheckUsuariosResult['Cantidad'] == 0){ //SI NO EXITE DNI
+                $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
+            } else { //SI EXISTE DNI
+                $_SESSION['dni'] = $text;
+                $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
+                $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
+                $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProximoVencimiento /Mantenimientos ".$_SESSION['dni'];
+            }
+            $telegram->sendMessage($chatId,$defaultMesage, 'HTML');
+            $telegram->sendMessage($chatId,$SubMenu,'HTML');
         }
-        $telegram->sendMessage($chatId,$defaultMesage, 'HTML');
-        $telegram->sendMessage($chatId,$SubMenu,'HTML');
-
+        if($_SESSION['FlagDNI'] == 0){
+            $defaultMesage="No entiendo ese comando.Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /IniciarSesion";
+            $telegram->sendMessage($chatId,$SubMenu,'HTML');
+        }
+       
     }
 
     /* $telegram->sendMessage($chatId,"Lo que escribio el usuario es: ".$chatId." | ".$text); */
