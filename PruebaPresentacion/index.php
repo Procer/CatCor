@@ -227,7 +227,7 @@ if(isset($update->message->text)){
             $_SESSION['dni'] = $text;
             $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
             $SqlInfoUsuariosResult = mysqli_fetch_assoc($SqlInfoUsuario);
-            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento $_SESSION['dni']";
+            $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /AutoPropio /ProxVencimiento /Mantenimiento ".$_SESSION['dni'];
         }
         $telegram->sendMessage($chatId,$defaultMesage, 'HTML');
 
