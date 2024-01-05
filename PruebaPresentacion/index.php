@@ -204,7 +204,7 @@ if(isset($update->message->text)){
 
         $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\nAcá vamos a indicar el significado de algunos íconos...";
         $telegram->sendMessage($chatId,$message);
-        sleep(8);
+        sleep(12);
         $thumbpatha = 'img/TIPS/PisarFreno.png';
         $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
         sleep(4);
