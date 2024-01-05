@@ -135,7 +135,7 @@ if(isset($update->message->text)){
 
         $thumbpath = 'img/TIPS/AndroidCar.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS ANDROID AUTO",null,$keyboard);
-  
+        sleep(3);
         $keyboard = new InlineKeyboardMarkup(
             [
                 [
@@ -149,11 +149,13 @@ if(isset($update->message->text)){
 
         $thumbpath = 'img/TIPS/AppleCarPlay.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
-
-        $thumbpath = 'img/TIPS/LadoDelTanque.png';
-        $telegram->sendPhoto($chatId,new CURLFile($thumbpath),"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
+        sleep(3);
+        $thumbpatha = 'img/TIPS/LadoDelTanque.png';
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
+        sleep(2);
         $message = "Estando sentado frente al volante, en la imagen nos está indicando que para cargar combustible lo tenemos del lado izquierdo del auto.";
         $telegram->sendMessage($chatId,$message, 'HTML');
+        sleep(4);
         $telegram->sendMessage($chatId,'/VerMasTIPS | '.$SubMenu,'HTML'); 
 
         /*$informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
@@ -202,15 +204,16 @@ if(isset($update->message->text)){
 
         $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\n Acá les vamos a indicar el significado de algunos íconos.";
         $telegram->sendMessage($chatId,$message);
+        sleep(4);
         $thumbpatha = 'img/TIPS/PisarFreno.png';
         $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
-        sleep(10);
+        sleep(4);
         $thumbpathb = 'img/TIPS/AirBag.png';
         $telegram->sendPhoto($chatId,new CURLFile($thumbpathb),"Cuando esta luz se enciende te avisa que los airbags están dañadas, por lo que debes revisarlas lo antes posible.  ",null,$keyboard);        
-        sleep(10);
+        sleep(4);
         $thumbpathc = 'img/TIPS/FuncionamientoMotor.png';
         $telegram->sendPhoto($chatId,new CURLFile($thumbpathc),"Este símbolo indica que la computadora del motor ha enviado un código de alerta en el diagnóstico de su funcionamiento y requiere atención.  ",null,$keyboard);        
-        sleep(10);
+        sleep(4);
         $telegram->sendMessage($chatId,$SubMenu,'HTML'); 
 
     }elseif($text === '5'){
