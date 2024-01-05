@@ -151,7 +151,7 @@ if(isset($update->message->text)){
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
         $thumbpath = 'img/TIPS/LadoDelTanque.png';
-        $telegram->sendPhoto($chatId,"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpath),"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
         $message = "Estando sentado frente al volante, en la imagen nos está indicando que para cargar combustible lo tenemos del lado izquierdo del auto.";
         $telegram->sendMessage($chatId,$message, 'HTML');
         $telegram->sendMessage($chatId,'/VerMasTIPS | '.$SubMenu,'HTML'); 
@@ -203,11 +203,11 @@ if(isset($update->message->text)){
         $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\n Acá les vamos a indicar el significado de algunos íconos.";
         $telegram->sendMessage($chatId,$message);
         $thumbpath = 'img/TIPS/PisarFreno.png';
-        $telegram->sendPhoto($chatId,"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpath),"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
         $thumbpath = 'img/TIPS/AirBag.png';
-        $telegram->sendPhoto($chatId,"Cuando esta luz se enciende te avisa que los airbags están dañadas, por lo que debes revisarlas lo antes posible.  ",null,$keyboard);        
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpath),"Cuando esta luz se enciende te avisa que los airbags están dañadas, por lo que debes revisarlas lo antes posible.  ",null,$keyboard);        
         $thumbpath = 'img/TIPS/FuncionamientoMotor.png';
-        $telegram->sendPhoto($chatId,"Este símbolo indica que la computadora del motor ha enviado un código de alerta en el diagnóstico de su funcionamiento y requiere atención.  ",null,$keyboard);        
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpath),"Este símbolo indica que la computadora del motor ha enviado un código de alerta en el diagnóstico de su funcionamiento y requiere atención.  ",null,$keyboard);        
         $telegram->sendMessage($chatId,$SubMenu,'HTML'); 
 
     }elseif($text === '5'){
