@@ -153,8 +153,8 @@ if(isset($update->message->text)){
         $thumbpath = 'img/TIPS/LadoDelTanque.png';
         $telegram->sendPhoto($chatId,"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
         $message = "Estando sentado frente al volante, en la imagen nos está indicando que para cargar combustible lo tenemos del lado izquierdo del auto.";
-        $telegram->sendMessage($chatId,$message);
-        $telegram->sendMessage($chatId,"/VerMasTIPS | ".$SubMenu,'HTML'); 
+        $telegram->sendMessage($chatId,$message, 'HTML');
+        $telegram->sendMessage($chatId,'/VerMasTIPS | '.$SubMenu,'HTML'); 
 
         /*$informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
         $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <em>Para evitar que acumule polvo y suciedad.</em>\n\n";
