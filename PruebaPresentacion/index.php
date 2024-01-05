@@ -151,11 +151,11 @@ if(isset($update->message->text)){
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
         sleep(3);
         $thumbpatha = 'img/TIPS/LadoDelTanque.png';
-        $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
-        sleep(2);
+        $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null);
+        sleep(3);
         $message = "Estando sentado frente al volante, en la imagen nos está indicando que para cargar combustible lo tenemos del lado izquierdo del auto.";
         $telegram->sendMessage($chatId,$message, 'HTML');
-        sleep(4);
+        sleep(7);
         $telegram->sendMessage($chatId,'/VerMasTIPS | '.$SubMenu,'HTML'); 
 
         /*$informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
@@ -202,9 +202,9 @@ if(isset($update->message->text)){
        /* $audiopath = 'assets/sample1.mp3';
         $telegram->sendAudio($chatId, new CURLFile(realpath($audiopath)));*/
 
-        $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\n Acá les vamos a indicar el significado de algunos íconos.";
+        $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\nAcá vamos a indicar el significado de algunos íconos...";
         $telegram->sendMessage($chatId,$message);
-        sleep(4);
+        sleep(8);
         $thumbpatha = 'img/TIPS/PisarFreno.png';
         $telegram->sendPhoto($chatId,new CURLFile($thumbpatha),"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
         sleep(4);
