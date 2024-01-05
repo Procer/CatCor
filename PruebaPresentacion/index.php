@@ -150,7 +150,12 @@ if(isset($update->message->text)){
         $thumbpath = 'img/AppleCarPlay.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
-        $informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
+        $thumbpath = 'img/LadoDelTanque.png';
+        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"¿Sabías que esa flecha indica de qué lado del auto está para cargar cumbustible?  ",null,$keyboard);
+        $message = "Estando sentado frente al volante, en la imagen nos está indicando que del lado izquierdo está para cargar combustible.";
+        $telegram->sendMessage($chatId,$message);
+      
+        /*$informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
         $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <em>Para evitar que acumule polvo y suciedad.</em>\n\n";
         $informacion.="📌  Controlá la presión de los neumáticos: <em>Va a permitir que duren más, brindándote mayor seguridad.</em>\n\n";
         $informacion.="📌  Evitá apoyar la mano en la palanca de cambio mientras manejás: <em>Crea presión que puede desgastar los componentes internos.</em>\n\n";
@@ -160,7 +165,7 @@ if(isset($update->message->text)){
         $informacion.="📌  Controlá el nivel de aceite: <em>Con el objetivo de prevenir fallas y daños graves.</em>\n\n";
         $informacion.="📌  Revisá el líquido refrigerante: <em>Para que la temperatura del motor se mantenga estable.</em>\n\n";
         $informacion.="📌  Chequeá los amortiguadores cada 30 mil kilómetros: <em>Esto asegura la estabilidad y confort.</em>\n\n";
-        $telegram->sendMessage($chatId,$informacion,'HTML');
+        $telegram->sendMessage($chatId,$informacion,'HTML');*/
 
 /* ############ CONTACTO ############*/        
     }elseif($text === 'B' or $text === 'b' or $text === '/Contacto'){
