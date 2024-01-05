@@ -133,7 +133,7 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'img/AndroidCar.png';
+        $thumbpath = 'img/TIPS/AndroidCar.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS ANDROID AUTO",null,$keyboard);
   
         $keyboard = new InlineKeyboardMarkup(
@@ -147,14 +147,15 @@ if(isset($update->message->text)){
             ]
         );
 
-        $thumbpath = 'img/AppleCarPlay.png';
+        $thumbpath = 'img/TIPS/AppleCarPlay.png';
         $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"TRUCOS APPLE CAR PLAY",null,$keyboard);
 
-        $thumbpath = 'img/LadoDelTanque.png';
-        $telegram->sendPhoto($chatId, new CURLFile($thumbpath),"¿Sabías que esa flecha indica de qué lado del auto está para cargar cumbustible?  ",null,$keyboard);
-        $message = "Estando sentado frente al volante, en la imagen nos está indicando que del lado izquierdo está para cargar combustible.";
+        $thumbpath = 'img/TIPS/LadoDelTanque.png';
+        $telegram->sendPhoto($chatId,"¿Sabes qué nos está indicando esa flecha junto al símbolo del combustible?  ",null,$keyboard);
+        $message = "Estando sentado frente al volante, en la imagen nos está indicando que para cargar combustible lo tenemos del lado izquierdo del auto.";
         $telegram->sendMessage($chatId,$message);
-      
+        $telegram->sendMessage($chatId,"/VerMasTIPS | ".$SubMenu,'HTML'); 
+
         /*$informacion="📌  Usá de forma correcta del freno de mano: <em>Solo usalo para dejarlo estacionado en una pendiente.</em>\n\n";
         $informacion.="📌  Mantené limpio el filtro del aire acondicionado: <em>Para evitar que acumule polvo y suciedad.</em>\n\n";
         $informacion.="📌  Controlá la presión de los neumáticos: <em>Va a permitir que duren más, brindándote mayor seguridad.</em>\n\n";
@@ -194,13 +195,21 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,$message,'HTML');
         $_SESSION['FlagDNI'] = 1;
 
-    }elseif($text === '4'){
+    }elseif($text === '/VerMasTIPS'){
 
-        $audiopath = 'assets/sample1.mp3';
-        $telegram->sendAudio($chatId, new CURLFile(realpath($audiopath)));
+       /* $audiopath = 'assets/sample1.mp3';
+        $telegram->sendAudio($chatId, new CURLFile(realpath($audiopath)));*/
 
-        $message = "Aquí tienes el archivo de Audio que solicitaste.";
+        $message = "Cuando el auto está en contacto y luego de unos segundos todas las luces del tablero se apagan pero sólo queda una encendida, ahí es cuando se debe prestar atención. O cuando se está manejando y de pronto un ícono se enciende. \n\n Acá les vamos a indicar el significado de algunos íconos.";
         $telegram->sendMessage($chatId,$message);
+        $thumbpath = 'img/TIPS/PisarFreno.png';
+        $telegram->sendPhoto($chatId,"Te indica que debes pisar el freno para encender el automóvil.  ",null,$keyboard);
+        $thumbpath = 'img/TIPS/AirBag.png';
+        $telegram->sendPhoto($chatId,"Cuando esta luz se enciende te avisa que los airbags están dañadas, por lo que debes revisarlas lo antes posible.  ",null,$keyboard);        
+        $thumbpath = 'img/TIPS/FuncionamientoMotor.png';
+        $telegram->sendPhoto($chatId,"Este símbolo indica que la computadora del motor ha enviado un código de alerta en el diagnóstico de su funcionamiento y requiere atención.  ",null,$keyboard);        
+        $telegram->sendMessage($chatId,$SubMenu,'HTML'); 
+
     }elseif($text === '5'){
 
         $message = "Aquí tienes el video de introducción al curso.";
