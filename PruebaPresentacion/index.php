@@ -293,6 +293,7 @@ if(isset($update->message->text)){
             $defaultMesage="No entiendo ese comando. Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /MiAuto";
             $telegram->sendMessage($chatId,$defaultMesage,'HTML');
         }*/
+        $_SESSION['dni'] = $text;
         $defaultMesage="Hola Juan Manuel, bienvenido! ¿Qué desea saber? /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
    
     }
