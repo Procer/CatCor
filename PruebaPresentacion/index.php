@@ -201,16 +201,16 @@ if(isset($update->message->text)){
 
         /* $pdfpath = 'assets/test.pdf';
          $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
- 
-         $message = "Tesla Modelo X - Año 2023 - 👍 Aún en garantía \n\n ⚙️ Próximo service: Junio 2024 o a los 10.000 KM, lo que ocurra primero. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+         $_SESSION['dni'] = $_SESSION['dni'];
+         $message = "Tesla Modelo X - Año 2023 - Aún en garantía 👍 \n\n ⚙️ Próximo service: Junio 2024 o a los 10.000 KM, lo que ocurra primero. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
          $telegram->sendMessage($chatId,$message,'HTML');
  
     }elseif($text === '/MiPlan'){
 
         /* $pdfpath = 'assets/test.pdf';
         $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
-     
-        $message = "Su plan es por un Tesla Modelo X \n\n Cuotas abonadas: 01-2023 $180.000 \n 02-2023 $180.000 \n 03-2023 $190.000 \n 04-2023 impaga \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+        $_SESSION['dni'] = $_SESSION['dni'];
+        $message = "Su plan es por un Tesla Modelo X \n\n <b>CUOTAS ABONADAS</b>\n 01-2023 $180.000 \n 02-2023 $180.000 \n 03-2023 $190.000 \n <b>04-2023 impaga</b> \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
         $telegram->sendMessage($chatId,$message,'HTML');
      
     }elseif($text === '/MantenimientosRealizados'){
@@ -218,7 +218,7 @@ if(isset($update->message->text)){
         /* $pdfpath = 'assets/test.pdf';
         $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
      
-        $message = "Primer Service realizdo: 03-2022. Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n Segundo Service realizado: 03-2023. Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+        $message = "<b>Primer Service realizdo: 03-2022</b>\n Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n <b>Segundo Service realizado: 03-2023</b>\n Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
         $telegram->sendMessage($chatId,$message,'HTML');
      
     }elseif($text === '/CargarMantenimiento'){
