@@ -45,7 +45,7 @@ if(isset($update->message->text)){
         $message.="<b>C</b> - /Videos\n";
         $message.="<b>D</b> - /TIPS\n";
         $message.="<b>E</b> - /ErroresPantalla\n";
-        $message.="<b>F</b> - /IniciarSesion\n";
+        $message.="<b>F</b> - /MiAuto\n";
 
         $telegram->sendMessage($chatId,$message, 'HTML');
 
@@ -188,7 +188,7 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,$SubMenu,'HTML');  
         
 /* ############ INICIAR SESION ############*/        
-    }elseif($text === '/IniciarSesion'){
+    }elseif($text === '/MiAuto'){
 
        /* $pdfpath = 'assets/test.pdf';
         $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
@@ -239,12 +239,12 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,"Hola como estas?");
 
     }else{
-        if($_SESSION['FlagDNI'] == 1){
+        if($_SESSION['FlagDNI'] === 1){
             //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
             $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
             $SqlCheckUsuariosResult = mysqli_fetch_assoc($SqlCheckUsuario);
             if($SqlCheckUsuariosResult['Cantidad'] == 0){ //SI NO EXITE DNI
-                $defaultMesage="Disculpe, no existe ese DNI. /IniciarSesion";
+                $defaultMesage="Disculpe, no existe ese DNI. /MiAuto";
             } else { //SI EXISTE DNI
                 $_SESSION['dni'] = $text;
                 $SqlInfoUsuario = mysqli_query($conn, "SELECT nombre_apellido FROM usuario where dni = $text");
@@ -255,7 +255,7 @@ if(isset($update->message->text)){
             $telegram->sendMessage($chatId,$SubMenu,'HTML');
         }
         if($_SESSION['FlagDNI'] == 0){
-            $defaultMesage="No entiendo ese comando. Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /IniciarSesion";
+            $defaultMesage="No entiendo ese comando. Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /MiAuto";
             $telegram->sendMessage($chatId,$defaultMesage,'HTML');
         }
        
