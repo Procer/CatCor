@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['FlagDNI'] = 0;
+//$_SESSION['FlagDNI'] = 0;
 
 require_once("include/vendor/autoload.php");
 
