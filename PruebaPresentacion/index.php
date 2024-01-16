@@ -197,6 +197,40 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,$message,'HTML');
         $_SESSION['FlagDNI'] = 1;
 
+    }elseif($text === '/Auto'){
+
+        /* $pdfpath = 'assets/test.pdf';
+         $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
+ 
+         $message = "Tesla Modelo X - Año 2023 - 👍 Aún en garantía \n\n ⚙️ Próximo service: Junio 2024 o a los 10.000 KM, lo que ocurra primero. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+         $telegram->sendMessage($chatId,$message,'HTML');
+ 
+    }elseif($text === '/MiPlan'){
+
+        /* $pdfpath = 'assets/test.pdf';
+        $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
+     
+        $message = "Su plan es por un Tesla Modelo X \n\n Cuotas abonadas: 01-2023 $180.000 \n 02-2023 $180.000 \n 03-2023 $190.000 \n 04-2023 impaga \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+        $telegram->sendMessage($chatId,$message,'HTML');
+     
+    }elseif($text === '/MantenimientosRealizados'){
+
+        /* $pdfpath = 'assets/test.pdf';
+        $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
+     
+        $message = "Primer Service realizdo: 03-2022. Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n Segundo Service realizado: 03-2023. Detalle: cambio de aceite, cambio de filtro del aire, chequeo general. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+        $telegram->sendMessage($chatId,$message,'HTML');
+     
+    }elseif($text === '/CargarMantenimiento'){
+
+        /* $pdfpath = 'assets/test.pdf';
+        $telegram->sendDocument($chatId, new CURLFile(realpath($pdfpath)));*/
+     
+        $message = "En este espacio usted puede cargar los mantenimientos que haga en su auto para tener un historial. \n\n /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+        $telegram->sendMessage($chatId,$message,'HTML');
+     
+  
+/* ############ VERMASTIPS ############*/        
     }elseif($text === '/VerMasTIPS'){
 
        /* $audiopath = 'assets/sample1.mp3';
@@ -239,6 +273,7 @@ if(isset($update->message->text)){
         $telegram->sendMessage($chatId,"Hola como estas?");
 
     }else{
+        /*
         if($_SESSION['FlagDNI'] === 1){
             //COMPRUEBO SI EXISTE DNI EN TABLA USUARIO
             $SqlCheckUsuario = mysqli_query($conn, "SELECT count(*) as Cantidad FROM usuario where dni = $text");
@@ -257,8 +292,9 @@ if(isset($update->message->text)){
         if($_SESSION['FlagDNI'] == 0){
             $defaultMesage="No entiendo ese comando. Puedes usar /Nosotros | /Contacto | /Videos | /TIPS | /ErroresPantalla | /MiAuto";
             $telegram->sendMessage($chatId,$defaultMesage,'HTML');
-        }
-       
+        }*/
+        $defaultMesage="Hola ".$SqlInfoUsuariosResult['nombre_apellido'].". ¿Qué desea saber? /Auto /MiPlan /MantenimientosRealizados /CargarMantenimiento ".$_SESSION['dni'];
+   
     }
 
     /* $telegram->sendMessage($chatId,"Lo que escribio el usuario es: ".$chatId." | ".$text); */
